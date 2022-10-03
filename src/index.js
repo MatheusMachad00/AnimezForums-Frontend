@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import Login from "./components/login";
 import Signup from "./components/signup";
+import Header from "./components/header";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/header" element={<Header />} />
         </Routes>
       </BrowserRouter>
   )
