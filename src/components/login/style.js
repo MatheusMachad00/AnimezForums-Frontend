@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
-export const SignScreen = styled.div`
+export const LoginScreen = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
 align-items: center;
+justify-content: center;
 margin-top: 30px;
-  form{
+form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-  }
+    margin-top: 40px;
+}
   input{
     margin-bottom: 13px;
     background: #FFFFFF;
@@ -25,6 +25,7 @@ margin-top: 30px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
+    margin-bottom: 20px;
   }
   input::placeholder {
     font-family: 'Inter', sans-serif;
@@ -35,7 +36,7 @@ margin-top: 30px;
     color: #808080;
     padding-left: 16px;
   }
-  button{
+button{
     width: 326px;
     height: 58px;
     background: #24FF00;
@@ -51,17 +52,13 @@ margin-top: 30px;
     align-items: center;
     margin-top: 15px;
 }
-  h2{
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 18px;
-    color: #81FE77;
-    padding-top: 25px;
-  }
-
-@media (max-width: 1000px) {
-  
+h2{
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #81FE77;
+  padding-top: 25px;
 }
 `
