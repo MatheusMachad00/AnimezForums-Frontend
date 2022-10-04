@@ -39,10 +39,9 @@ export default function CreatePost() {
         </form>}
       </Forms>
       <Navbar>
-        <img src={TRASH} alt="trash button" />
-        <img src={HOME} alt="home button" />
-        <img src={SEND} alt="send button" />
+        <img src={HOME} alt="home button" /> 
+        <img src={SEND} alt="send button" /> 
       </Navbar>
     </>
   );
-}
+};

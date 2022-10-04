@@ -6,6 +6,7 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 import Home from "./components/home/index"
 import CreatePost from "./components/createPost";
+import CreateComment from "./components/createComment";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/createPost" element={<CreatePost />} />
+        <Route path="/createComment" element={<CreateComment />} />
       </Routes>
     </BrowserRouter>
   )

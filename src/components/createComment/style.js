@@ -24,8 +24,9 @@ input::placeholder{
 }
 
 .description{
-  height: 300px;
+  height: 400px;
   border-radius: 20px;
+  margin-bottom: 60px;
 }
 `
 
