@@ -1,12 +1,12 @@
 import { Logo, ProfileAvatar, Head, Bar } from "./style"
 
-export default function Header() {
+export default function Header({headerImg}) {
   return (
     <>
     <Head>
       <Logo>
         <h1>AnimezForums</h1>
-        <img src="./assets/shaltear.png" alt="shaltear logo" />
+        <img src={headerImg} alt="character logo" />
       </Logo>
       <ProfileAvatar>
       <img src="./assets/albedo2.png" alt="" />

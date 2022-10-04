@@ -6,13 +6,14 @@ import { SearchBar, Posts, Navbar } from "./style"
 import PostHome from "../post/index";
 import NEWPOST from "../../assets/new.svg";
 import LOGOUT from "../../assets/logout.svg"
+import headerImg from "../../assets/shaltear.png"
 
 export default function Home() {
   const [anime, setAnime] = useState("");
 
   return (
     <>
-      <Header />
+      <Header headerImg={headerImg}/>
       <SearchBar>
         <input
           type="text"
