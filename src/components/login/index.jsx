@@ -20,7 +20,10 @@ export default function Login({setUserData}) {
     });
     request.then(response => {
       const { data } = response;
-      /* setUserData(data); */
+      console.log(data)
+      setUserData(data);
+      const stringifyData = JSON.stringify(data);
+      localStorage.setItem("userDataStorage", stringifyData);
       navigate("/home");
     })
     request.catch(err => {

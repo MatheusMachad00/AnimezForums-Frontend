@@ -8,15 +8,16 @@ import Header from "./components/header";
 
 
 function App() {
+  const [userData, setUserData] = useState({});
 
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/header" element={<Header />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login setUserData={setUserData}/>} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/header" element={<Header />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
