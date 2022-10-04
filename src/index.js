@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Login from "./components/login";
 import Signup from "./components/signup";
 import Home from "./components/home/index"
+import CreatePost from "./components/createPost";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Login setUserData={setUserData}/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/createPost" element={<CreatePost />} />
       </Routes>
     </BrowserRouter>
   )
