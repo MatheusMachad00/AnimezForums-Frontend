@@ -4,7 +4,7 @@ import headerImg from "../../assets/darkness.png";
 import TRASH from "../../assets/trash.svg";
 import SEND from "../../assets/send.svg";
 import HOME from "../../assets/home.svg";
-import { Navbar } from "./style";
+import { Navbar, Forms } from "./style";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -15,26 +15,29 @@ export default function CreatePost() {
   return (
     <>
       <Header headerImg={headerImg} />
-      <div>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Anime"
-          value={anime}
-          onChange={(e) => setAnime(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Title"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
+      <Forms>
+        {<form action="">
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Anime"
+            value={anime}
+            onChange={(e) => setAnime(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="description"
+          />
+        </form>}
+      </Forms>
       <Navbar>
         <img src={TRASH} alt="trash button" />
         <img src={HOME} alt="home button" />
