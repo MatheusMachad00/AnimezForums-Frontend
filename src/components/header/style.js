@@ -5,14 +5,19 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0 20px;
-/* background-color: yellow; */
 margin-top: -5px;
+position: sticky;
+`
+
+export const HeaderBody = styled.div`
+position: relative;
 `
 
 export const Logo = styled.div`
 display: flex;
 align-items: center;
 padding-top: 5px;
+
 h1{
   color: #24FF00;
   font-family: 'Jolly Lodger', cursive;

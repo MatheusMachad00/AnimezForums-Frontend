@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SearchBar = styled.div`
 display: flex;
 justify-content: center;
-margin-top: 10px;
+margin-top: 15px;
 
 input{
   width: 250px;
@@ -26,9 +26,21 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color: rebeccapurple;
+margin-top: 35px;
+width: auto;
+height: 60vh;
+overflow-y: auto;
+background-color: yellow;
 `
 
-export const Post = styled.div`
+export const Navbar = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 40px 20px;
 
+.logout{
+  width: 40px;
+  height: 40px;
+}
 `
