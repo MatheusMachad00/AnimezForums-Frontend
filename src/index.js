@@ -7,6 +7,7 @@ import Signup from "./components/signup";
 import Home from "./components/home/index"
 import CreatePost from "./components/createPost";
 import CreateComment from "./components/createComment";
+import UserProfile from "./components/userProfile";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/createPost" element={<CreatePost />} />
         <Route path="/createComment" element={<CreateComment />} />
+        <Route path="/UserProfile" element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   )

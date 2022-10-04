@@ -26,6 +26,8 @@ export default function Home() {
         <PostHome />
         <PostHome />
         <PostHome />
+        <PostHome />
+        <PostHome />
       </Posts>
       <Navbar>
         <img src={NEWPOST} alt="new post button" />
