@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Head = styled.div`
 display: flex;
@@ -6,6 +6,7 @@ justify-content: space-between;
 align-items: center;
 padding: 0 20px;
 /* background-color: yellow; */
+margin-top: -5px;
 `
 
 export const Logo = styled.div`
@@ -32,4 +33,10 @@ img{
   border-radius: 360px;
   margin-top: 25px;
 }
+`
+
+export const Bar = styled.div`
+height: 2px;
+background-color: #D9D9D9;
+margin-top: 5px;
 `

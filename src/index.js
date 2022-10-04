@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import Login from "./components/login";
 import Signup from "./components/signup";
-import Header from "./components/header";
+import Home from "./components/home/index"
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login setUserData={setUserData}/>} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/header" element={<Header />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>
   )
