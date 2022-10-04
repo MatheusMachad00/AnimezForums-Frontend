@@ -12,14 +12,15 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  /* function submitData(event) {
+  function submitData(event) {
     event.preventDefault();
     setLoading(true);
-    const LINK_API = "https://apimywalletdriven.herokuapp.com/sign-up";
+    const LINK_API = "http://localhost:5000/signup";
     const request = axios.post(LINK_API, {
-      name,
+      username,
       email,
-      password
+      password,
+      avatar
     });
     request.then(response => {
       navigate("/");
@@ -30,13 +31,13 @@ export default function Signup() {
       setLoading(false);
       alert("E-mail ja cadastrado. Tente novamente.");
     });
-  } */
+  }
 
   return (
     <SignScreen>
       <img src="./assets/logoMobile.png" alt="logo" />
 
-      <form /* onSubmit={submitData} */>
+      <form onSubmit={submitData}>
         <input
           type="text"
           disabled={loading ? true : false}

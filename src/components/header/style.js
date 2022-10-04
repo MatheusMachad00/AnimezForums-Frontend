@@ -15,7 +15,7 @@ padding-top: 5px;
 h1{
   color: #24FF00;
   font-family: 'Jolly Lodger', cursive;
-  font-size: 30px;
+  font-size: 35px;
   padding-top: 30px;
   margin-right: -5px;
 }

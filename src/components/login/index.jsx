@@ -10,17 +10,17 @@ export default function Login({setUserData}) {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  /* function login(event) {
+  function login(event) {
     event.preventDefault();
     setLoading(true);
-    const LINK_API = "https://apimywalletdriven.herokuapp.com/login";
+    const LINK_API = "http://localhost:5000/login";
     const request = axios.post(LINK_API, {
       email,
       password
     });
     request.then(response => {
       const { data } = response;
-      setUserData(data);
+      /* setUserData(data); */
       navigate("/home");
     })
     request.catch(err => {
@@ -28,13 +28,13 @@ export default function Login({setUserData}) {
       setLoading(false);
       alert("E-mail ou senha incorretos. Tente novamente.");
     });
-  } */
+  }
 
   return (
     <LoginScreen>
       <img src="./assets/logoMobile.png" alt="logo" />
 
-      {<form /* onSubmit={login} */>
+      {<form onSubmit={login}>
         <input
           type="email"
           disabled={loading ? true : false}
