@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const SearchBar = styled.div`
 display: flex;
 justify-content: center;
-margin-top: 20px;
+margin-top: 10px;
+position: fixed;
+width: 100vw;
 
 input{
-  width: 250px;
+  width: 300px;
   height: 45px;
 
   background: #D9D9D9;
@@ -17,7 +19,7 @@ input::placeholder{
   font-family: 'Inter', sans-serif;
   align-items: center;
   color: #808080;
-  padding-left: 70px;
+  text-align: center;
   font-size: 15px;
 };
 `
@@ -26,11 +28,15 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-margin-top: 35px;
+margin-top: 30px;
 width: auto;
 height: 60vh;
 overflow-y: auto;
 background-color: yellow;
+padding: 450px 0 100px 0;
+
+
+
 `
 
 export const Navbar = styled.div`
@@ -51,10 +57,13 @@ img{
 export const Bar = styled.div`
 height: 2px;
 background-color: #D9D9D9;
-margin-top: 80px;
+margin-top: 10px;
+
+
 `
 
 export const MainBody = styled.div`
 position: relative;
 margin-top: 70px;
+overflow-y: hidden;
 `

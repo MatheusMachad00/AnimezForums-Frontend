@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <MainBody>
-      <Header headerImg={headerImg}/>
+      <Header headerImg={headerImg} />
       <Bar></Bar>
       <SearchBar>
         <input
@@ -32,7 +32,7 @@ export default function Home() {
       </Posts>
       <Navbar>
         <img src={NEWPOST} alt="new post button" />
-        <img src={LOGOUT} alt="logout button" className="logout"/>
+        <img src={LOGOUT} alt="logout button" className="logout" />
       </Navbar>
     </MainBody>
   );
