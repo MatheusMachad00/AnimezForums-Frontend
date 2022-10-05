@@ -4,7 +4,7 @@ import userAvatar from "../../assets/avatar.jpg"
 import STAR_WHITE from "../../assets/star-white.svg";
 import HOME from "../../assets/home.svg"
 import CHATBOX from "../../assets/chatbox.svg"
-import { PostHeader, LeftSide, TextPost, CommentBody, Navbar, MainBody } from "./style";
+import { PostHeader, LeftSide, TextPost, CommentBody, Navbar, MainBody, Bar } from "./style";
 import Comment from "../comment/index";
 
 
@@ -13,6 +13,7 @@ export default function PostScreen() {
   return (
     <MainBody>
       <Header headerImg={headerImg} />
+        <Bar></Bar>
       <PostHeader>
         <LeftSide>
           <img src={userAvatar} alt="user avatar" />

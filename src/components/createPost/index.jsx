@@ -4,7 +4,7 @@ import headerImg from "../../assets/darkness.png";
 import TRASH from "../../assets/trash.svg";
 import SEND from "../../assets/send.svg";
 import HOME from "../../assets/home.svg";
-import { Navbar, Forms } from "./style";
+import { Navbar, Forms, Bar, MainBody } from "./style";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -13,8 +13,9 @@ export default function CreatePost() {
 
 
   return (
-    <>
+    <MainBody>
       <Header headerImg={headerImg} />
+      <Bar></Bar>
       <Forms>
         {<form action="">
           <input
@@ -42,6 +43,6 @@ export default function CreatePost() {
         <img src={HOME} alt="home button" /> 
         <img src={SEND} alt="send button" /> 
       </Navbar>
-    </>
+    </MainBody>
   );
 };

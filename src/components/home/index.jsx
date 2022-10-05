@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../header/index";
-import { SearchBar, Posts, Navbar, Bar } from "./style"
+import { SearchBar, Posts, Navbar, Bar, MainBody } from "./style"
 import PostHome from "../post/index";
 import NEWPOST from "../../assets/new.svg";
 import LOGOUT from "../../assets/logout.svg"
@@ -12,7 +12,7 @@ export default function Home() {
   const [anime, setAnime] = useState("");
 
   return (
-    <>
+    <MainBody>
       <Header headerImg={headerImg}/>
       <Bar></Bar>
       <SearchBar>
@@ -34,6 +34,6 @@ export default function Home() {
         <img src={NEWPOST} alt="new post button" />
         <img src={LOGOUT} alt="logout button" className="logout"/>
       </Navbar>
-    </>
+    </MainBody>
   );
 }

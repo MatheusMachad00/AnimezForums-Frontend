@@ -34,14 +34,17 @@ background-color: yellow;
 `
 
 export const Navbar = styled.div`
+position: fixed;
+bottom: 0;
+background-color: black;
+width: 100vw;
 display: flex;
 justify-content: space-between;
-align-items: center;
-padding: 40px 20px;
+padding: 20px 25px;
 
-.logout{
-  width: 40px;
-  height: 40px;
+img{
+  height: 35px;
+  width: 35px;
 }
 `
 
@@ -49,4 +52,9 @@ export const Bar = styled.div`
 height: 2px;
 background-color: #D9D9D9;
 margin-top: 80px;
+`
+
+export const MainBody = styled.div`
+position: relative;
+margin-top: 70px;
 `

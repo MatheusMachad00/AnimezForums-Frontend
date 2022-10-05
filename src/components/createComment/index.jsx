@@ -4,15 +4,16 @@ import headerImg from "../../assets/yumyum.png";
 import TRASH from "../../assets/trash.svg";
 import SEND from "../../assets/send.svg";
 import HOME from "../../assets/home.svg";
-import { Navbar, Forms } from "./style";
+import { Navbar, Forms, Bar, MainBody } from "./style";
 
 export default function CreateComment() {
   const [comment, setComment] = useState("");
 
 
   return (
-    <>
+    <MainBody>
       <Header headerImg={headerImg} />
+      <Bar></Bar>
       <Forms>
         {<form action="">
           <input
@@ -29,6 +30,6 @@ export default function CreateComment() {
         <img src={HOME} alt="home button" /> {/* volta para a home */}
         <img src={SEND} alt="send button" /> {/* envia o post */}
       </Navbar>
-    </>
+    </MainBody>
   );
 };

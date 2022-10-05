@@ -8,6 +8,8 @@ padding: 0 20px;
 position: fixed;
 width: 100vw;
 top: 0;
+background-color: black;
+z-index: 9999999;
 `
 
 export const Logo = styled.div`
@@ -35,13 +37,6 @@ img{
   border-radius: 360px;
   margin-top: 25px;
 }
-`
-
-export const Bar = styled.div`
-height: 2px;
-background-color: #D9D9D9;
-margin-top: 5px;
-bottom: 0;
 `
 
 export const MainBody = styled.div`
