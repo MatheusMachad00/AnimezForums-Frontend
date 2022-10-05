@@ -1,8 +1,8 @@
-import { Logo, ProfileAvatar, Head, Bar } from "./style"
+import { Logo, ProfileAvatar, Head, Bar, MainBody } from "./style"
 
 export default function Header({headerImg}) {
   return (
-    <>
+    <MainBody>
     <Head>
       <Logo>
         <h1>AnimezForums</h1>
@@ -12,7 +12,7 @@ export default function Header({headerImg}) {
       <img src="./assets/albedo2.png" alt="" />
       </ProfileAvatar>
     </Head>
-    <Bar></Bar>
-    </>
+    {/* <Bar></Bar> */}
+    </MainBody>
   );
 }

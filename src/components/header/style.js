@@ -5,12 +5,9 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0 20px;
-margin-top: -5px;
-position: sticky;
-`
-
-export const HeaderBody = styled.div`
-position: relative;
+position: fixed;
+width: 100vw;
+top: 0;
 `
 
 export const Logo = styled.div`
@@ -44,4 +41,9 @@ export const Bar = styled.div`
 height: 2px;
 background-color: #D9D9D9;
 margin-top: 5px;
+bottom: 0;
+`
+
+export const MainBody = styled.div`
+position: relative;
 `

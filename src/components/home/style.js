@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SearchBar = styled.div`
 display: flex;
 justify-content: center;
-margin-top: 15px;
+margin-top: 20px;
 
 input{
   width: 250px;
@@ -43,4 +43,10 @@ padding: 40px 20px;
   width: 40px;
   height: 40px;
 }
+`
+
+export const Bar = styled.div`
+height: 2px;
+background-color: #D9D9D9;
+margin-top: 80px;
 `
