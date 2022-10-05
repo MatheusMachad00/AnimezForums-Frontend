@@ -8,6 +8,8 @@ import Home from "./components/home/index"
 import CreatePost from "./components/createPost";
 import CreateComment from "./components/createComment";
 import UserProfile from "./components/userProfile";
+import PostScreen from "./components/postScreen";
+
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         <Route path="/createPost" element={<CreatePost />} />
         <Route path="/createComment" element={<CreateComment />} />
         <Route path="/UserProfile" element={<UserProfile />} />
+        <Route path="/post" element={<PostScreen />} />
       </Routes>
     </BrowserRouter>
   )
