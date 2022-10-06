@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../header/index";
-import { SearchBar, Posts, Navbar, Bar, MainBody } from "./style"
+import { SearchBar, Posts, Navbar, MainBody } from "./style"
 import PostHome from "../post/index";
 import NEWPOST from "../../assets/new.svg";
 import LOGOUT from "../../assets/logout.svg"
@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <MainBody>
       <Header headerImg={headerImg} />
-      <Bar></Bar>
       <SearchBar>
         <input
           type="text"

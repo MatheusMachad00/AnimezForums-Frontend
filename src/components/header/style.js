@@ -10,6 +10,9 @@ width: 100vw;
 top: 0;
 background-color: black;
 z-index: 9999999;
+border-bottom: solid;
+border-color: #D9D9D9;
+border-width: 2px;
 `
 
 export const Logo = styled.div`
@@ -41,4 +44,5 @@ img{
 
 export const MainBody = styled.div`
 position: relative;
+
 `

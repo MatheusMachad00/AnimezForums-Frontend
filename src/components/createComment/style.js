@@ -45,13 +45,7 @@ img{
 }
 `
 
-export const Bar = styled.div`
-height: 2px;
-background-color: #D9D9D9;
-margin-top: 80px;
-`
-
 export const MainBody = styled.div`
 position: relative;
-margin-top: 70px;
+margin-top: 120px;
 `

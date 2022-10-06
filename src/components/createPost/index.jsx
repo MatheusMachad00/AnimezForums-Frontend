@@ -4,7 +4,7 @@ import headerImg from "../../assets/darkness.png";
 import TRASH from "../../assets/trash.svg";
 import SEND from "../../assets/send.svg";
 import HOME from "../../assets/home.svg";
-import { Navbar, Forms, Bar, MainBody } from "./style";
+import { Navbar, Forms, MainBody } from "./style";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -15,7 +15,6 @@ export default function CreatePost() {
   return (
     <MainBody>
       <Header headerImg={headerImg} />
-      <Bar></Bar>
       <Forms>
         {<form action="">
           <input

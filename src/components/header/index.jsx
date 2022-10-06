@@ -11,7 +11,6 @@ export default function Header({headerImg}) {
       <ProfileAvatar>
       <img src="./assets/albedo2.png" alt="" />
       </ProfileAvatar>
-      
     </Head>
     </MainBody>
   );
