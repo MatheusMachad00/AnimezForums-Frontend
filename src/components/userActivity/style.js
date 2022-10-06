@@ -63,10 +63,9 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color: yellow;
 width: auto;
 margin-top: -75px;
-padding: 25px 0 90px 0;
+padding: 25px 15px 90px 15px;
 `
 
 export const MainBody = styled.div`

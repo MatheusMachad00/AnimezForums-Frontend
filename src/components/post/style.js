@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const Post = styled.div`
 display: flex;
 background-color: #A6A6A6;
-width: auto;
+width: 350px;
 border-radius: 18px;
 padding: 7px 7px;
 margin-bottom: 10px;
+position: relative;
 `
 
 export const LeftSide = styled.div`
@@ -39,6 +40,21 @@ img{
 };
 `
 export const RightSide = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: absolute;
+right: 10px;
+
+h2{
+  font-family: 'Inter';
+  font-size: 15px;
+  font-weight: 700;
+  color: yellow;
+  margin-top: 5px;
+}
+
 img{
   width: 30px;
   height: 30px;

@@ -1,7 +1,7 @@
 import { Logo, ProfileAvatar, Head, Bar, MainBody } from "./style"
-import userAvatar from "../../assets/avatar.jpg"
 
-export default function Header({headerImg}) {
+
+export default function Header({headerImg, avatar}) {
   return (
     <MainBody>
     <Head>
@@ -10,7 +10,7 @@ export default function Header({headerImg}) {
         <img src={headerImg} alt="character logo" />
       </Logo>
       <ProfileAvatar>
-      <img src={userAvatar} alt="" />
+      <img src={avatar} alt="" />
       </ProfileAvatar>
     </Head>
     </MainBody>
