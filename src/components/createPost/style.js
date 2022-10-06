@@ -42,6 +42,11 @@ img{
   height: 35px;
   width: 35px;
 }
+
+button{
+  background-color: black;
+  border: none;
+}
 `
 
 export const MainBody = styled.div`

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../header/index";
@@ -46,11 +46,13 @@ export default function Home(userData) {
       </SearchBar>
       <Posts>
         {!postsData ? <h1>Sem posts no momento</h1> :
-          postsData.map(({ title, stars, id }) => (
+          postsData.map(({ title, stars, id, postOwner, postOwnerAvatar }) => (
             <PostHome
               id={id}
               title={title}
-              stars={stars} />
+              stars={stars}
+              postOwner={postOwner}
+              postOwnerAvatar={postOwnerAvatar} />
           ))}
       </Posts>
       <Navbar>

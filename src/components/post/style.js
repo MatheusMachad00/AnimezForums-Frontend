@@ -14,6 +14,7 @@ export const LeftSide = styled.div`
 img{
   width: 35px;
   height: 35px;
+  border-radius: 360px;
 };
 `
 

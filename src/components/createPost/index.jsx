@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useNavigate } from "react";
+import axios from "axios";
 import Header from "../header";
 import headerImg from "../../assets/darkness.png";
 import TRASH from "../../assets/trash.svg";
@@ -6,17 +7,40 @@ import SEND from "../../assets/send.svg";
 import HOME from "../../assets/home.svg";
 import { Navbar, Forms, MainBody } from "./style";
 
-export default function CreatePost() {
+export default function CreatePost(userData) {
   const [title, setTitle] = useState("");
   const [anime, setAnime] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
+  function createPost(event) {
+    event.preventDefault();
+    let TOKEN = userData.userData.token;
+    const config = {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`
+      }
+    };
+    const LINK_API = "http://localhost:5000/post/create";
+    const request = axios.post(LINK_API, {
+      title,
+      anime,
+      description
+    }, config);
+    request.then(response => {
+      const { data } = response;
+      navigate("/home");
+    })
+    request.catch(err => {
+      console.log(err.response);
+    });
+  }
 
   return (
     <MainBody>
-      <Header headerImg={headerImg} />
+      <Header headerImg={headerImg} avatar={userData.userData.avatar}/>
       <Forms>
-        {<form action="">
+        {<form onSubmit={createPost}>
           <input
             type="text"
             placeholder="Title"
@@ -40,7 +64,7 @@ export default function CreatePost() {
       </Forms>
       <Navbar>
         <img src={HOME} alt="home button" /> 
-        <img src={SEND} alt="send button" /> 
+        <button type="submit"><img src={SEND} alt="send button" /> </button>
       </Navbar>
     </MainBody>
   );
