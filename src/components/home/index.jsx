@@ -11,7 +11,6 @@ import headerImg from "../../assets/shaltear.png"
 export default function Home(userData) {
   const [anime, setAnime] = useState("");
   const [postsData, setPostsData] = useState(false);
-  console.log(userData)
 
   useEffect(() => {
     let TOKEN = userData.userData.token;
@@ -27,12 +26,12 @@ export default function Home(userData) {
     request.then(response => {
       const { data } = response;
       setPostsData(data);
-      console.log(postsData)
     });
     request.catch(err => {
       console.log(err.response)
     });
   }, []);
+
 
   return (
     <MainBody>

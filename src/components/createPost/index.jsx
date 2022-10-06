@@ -1,4 +1,5 @@
-import { useState, useNavigate } from "react";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../header";
 import headerImg from "../../assets/darkness.png";
@@ -38,7 +39,7 @@ export default function CreatePost(userData) {
 
   return (
     <MainBody>
-      <Header headerImg={headerImg} avatar={userData.userData.avatar}/>
+      <Header headerImg={headerImg} avatar={userData.userData.avatar} />
       <Forms>
         {<form onSubmit={createPost}>
           <input
@@ -60,12 +61,14 @@ export default function CreatePost(userData) {
             onChange={(e) => setDescription(e.target.value)}
             className="description"
           />
+          <Navbar>
+            <Link to={"/signup"}>
+              <img src={HOME} alt="home button" />
+            </Link>
+            <button type="submit"><img src={SEND} alt="send button" /> </button>
+          </Navbar>
         </form>}
       </Forms>
-      <Navbar>
-        <img src={HOME} alt="home button" /> 
-        <button type="submit"><img src={SEND} alt="send button" /> </button>
-      </Navbar>
     </MainBody>
   );
 };

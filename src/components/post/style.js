@@ -26,6 +26,7 @@ h1{
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 5px;
+  padding-right: 12px;
 };
 
 h2{
