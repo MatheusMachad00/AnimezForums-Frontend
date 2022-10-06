@@ -34,8 +34,6 @@ margin-top: 30px;
 width: auto;
 padding: 75px 0 80px 0;
 
-
-
 `
 
 export const Navbar = styled.div`

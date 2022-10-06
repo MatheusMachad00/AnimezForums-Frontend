@@ -1,4 +1,5 @@
 import { Logo, ProfileAvatar, Head, Bar, MainBody } from "./style"
+import userAvatar from "../../assets/avatar.jpg"
 
 export default function Header({headerImg}) {
   return (
@@ -9,7 +10,7 @@ export default function Header({headerImg}) {
         <img src={headerImg} alt="character logo" />
       </Logo>
       <ProfileAvatar>
-      <img src="./assets/albedo2.png" alt="" />
+      <img src={userAvatar} alt="" />
       </ProfileAvatar>
     </Head>
     </MainBody>

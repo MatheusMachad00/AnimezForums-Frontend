@@ -9,7 +9,7 @@ import CreatePost from "./components/createPost";
 import CreateComment from "./components/createComment";
 import UserProfile from "./components/userProfile";
 import PostScreen from "./components/postScreen";
-
+import UserActivity from "./components/userActivity";
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
         <Route path="/createComment" element={<CreateComment />} />
         <Route path="/UserProfile" element={<UserProfile />} />
         <Route path="/post" element={<PostScreen />} />
+        <Route path="/userActivity" element={<UserActivity />} />
       </Routes>
     </BrowserRouter>
   )
