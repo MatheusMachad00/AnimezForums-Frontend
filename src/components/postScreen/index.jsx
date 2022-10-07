@@ -29,8 +29,6 @@ export default function PostScreen(userData) {
     request.then(response => {
       const { data } = response;
       setPostsData(data);
-      console.log(data)
-      console.log(data.comments)
     });
     request.catch(err => {
       console.log(err.response)
@@ -44,8 +42,10 @@ export default function PostScreen(userData) {
         <>
           <PostHeader>
             <LeftSide>
-              <img src={postsData.users.avatar} alt="user avatar" />
-              <h2>{postsData.users.username}</h2>
+              <Link to={`/UserProfile/${postsData.userId}`}>
+                <img src={postsData.users.avatar} alt="user avatar" />
+                <h2>{postsData.users.username}</h2>
+              </Link>
             </LeftSide>
             <h1>{postsData.title}</h1>
             <img src={STAR_WHITE} alt="star" />

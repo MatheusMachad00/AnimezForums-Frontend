@@ -4,7 +4,7 @@ export const CommentBody = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: #A6A6A6;
+background-color: ${(props) => (props.commentBelongsToUser ? "#669A5E" : "#A6A6A6")};
 height: auto;
 padding: 7px 7px;
 border-radius: 18px;
@@ -48,6 +48,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 18px;
 color: #FFFFFF;
-margin-bottom: 50px;
+margin-bottom: 20px;
+text-align: center;
 }
 ` 

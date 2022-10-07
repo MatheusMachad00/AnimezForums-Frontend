@@ -14,6 +14,10 @@ h1{
   font-family: 'Inter';
   font-size: 30px;
   font-weight: 700;
+  width: 100px;
+  word-wrap: break-word;
+  height: auto;
+  text-align: center;
 }
 img{
   width: 50px;
@@ -72,7 +76,8 @@ background-color: black;
 width: 100vw;
 display: flex;
 justify-content: center;
-padding: 20px 0;
+padding-bottom: 50px;
+
 
 img{
   height: 45px;

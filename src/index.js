@@ -25,7 +25,7 @@ function App() {
           <Route path="/home" element={<Home userData={userData} />} />
           <Route path="/createPost" element={<CreatePost userData={userData} />} />
           <Route path="/createComment/:id" element={<CreateComment userData={userData} />} />
-          <Route path="/UserProfile" element={<UserProfile userData={userData} />} />
+          <Route path="/UserProfile/:id" element={<UserProfile userData={userData} />} />
           <Route path="/post/:id" element={<PostScreen userData={userData} />} />
           <Route path="/userActivity" element={<UserActivity userData={userData} />} />
         </Routes>
