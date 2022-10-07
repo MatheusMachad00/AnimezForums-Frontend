@@ -72,7 +72,7 @@ export default function PostScreen(userData) {
         <Link to={"/home"}>
           <img src={HOME} alt="home button" />
         </Link>
-        <Link to={"/createComment"}>
+        <Link to={`/createComment/${id}`}>
           <img src={CHATBOX} alt="chatbox button" />
         </Link>
       </Navbar>
