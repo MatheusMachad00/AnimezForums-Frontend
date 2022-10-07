@@ -1,50 +1,80 @@
 import Header from "../header/index";
 import headerImg from "../../assets/Aqua.(KonoSuba).full.3362480.png"
-import userAvatar from "../../assets/avatar.jpg"
 import STAR_WHITE from "../../assets/star-white.svg";
 import HOME from "../../assets/home.svg"
 import CHATBOX from "../../assets/chatbox.svg"
 import { PostHeader, LeftSide, TextPost, CommentBody, Navbar, MainBody } from "./style";
 import Comment from "../comment/index";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
-export default function PostScreen() {
+export default function PostScreen(userData) {
+  const { id } = useParams();
+  const [postsData, setPostsData] = useState(false);
+  const userLoggedId = userData.userData.id;
+
+  useEffect(() => {
+    let TOKEN = userData.userData.token;
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`
+      }
+    };
+
+    const LINK_API = `http://localhost:5000/post/${id}`;
+    const request = axios.get(LINK_API, config);
+    request.then(response => {
+      const { data } = response;
+      setPostsData(data);
+      console.log(data)
+      console.log(data.comments)
+    });
+    request.catch(err => {
+      console.log(err.response)
+    });
+  }, []);
 
   return (
     <MainBody>
-      <Header headerImg={headerImg} />
-      <PostHeader>
-        <LeftSide>
-          <img src={userAvatar} alt="user avatar" />
-          <h2>Nazuna</h2>
-        </LeftSide>
-        <h1>Episódio 13 de Overlord</h1>
-        <img src={STAR_WHITE} alt="star" />
-      </PostHeader>
-      <TextPost>
-        <h1>Ainz Ooal Gown calmly states that he instead should be thanking Shalltear
-          Bloodfallen for her overconfidence. Shalltear believes Ainz is bluffing but is now
-          wondering why Ainz has yet to retreat. Ainz explains the tactics of PVP and the use of
-          misinformation. Shalltear realizes that she was led to believe that Ainz didn't know
-          about her abilities from the start. In fact, Ainz was lying, making Shalltear think
-          everything is going according to her master's plan. Scared at the possibility that
-          she walked into a trap she retaliates, intending to pierce Ainz with Spuit Lance.
-          Ainz is suddenly garbed in silver armor. The Floor Guardians watching from Nazarick
-          realize that the armor is Touch Me's personal armor. Demiurge deduces that Ainz used
-          [Perfect Warrior] to wear the armor without penalty. Shalltear cries in pain as she is
-          slashed across the chest. She sees that her opponent now wields a katana, which she
-          recognizes as Takemikazuchi MK 8, another weapon of the Supreme Beings. Ainz declares
-          that he possesses the strength of all Forty-One Supreme Beings.
-        </h1>
-        <CommentBody>
-          <Comment />
-          <Comment />
-          <Comment />
-        </CommentBody>
-      </TextPost>
+      <Header headerImg={headerImg} avatar={userData.userData.avatar} />
+      {!postsData ? <h1>Carregando....</h1> :
+        <>
+          <PostHeader>
+            <LeftSide>
+              <img src={postsData.users.avatar} alt="user avatar" />
+              <h2>{postsData.users.username}</h2>
+            </LeftSide>
+            <h1>{postsData.title}</h1>
+            <img src={STAR_WHITE} alt="star" />
+          </PostHeader>
+          <TextPost>
+            <h1>{postsData.description}</h1>
+            <CommentBody>
+              {!postsData.comments ? <h3>Sem comentários</h3> :
+                postsData.comments.map(({ id, comment, commentOwner, commentOwnerAvatar, userId }) => (
+                  <Comment
+                    id={id}
+                    comment={comment}
+                    commentOwner={commentOwner}
+                    commentOwnerAvatar={commentOwnerAvatar}
+                    userLoggedId={userLoggedId}
+                    userId={userId}
+                  />
+                ))}
+            </CommentBody>
+          </TextPost>
+        </>
+      }
       <Navbar>
-      <img src={HOME} alt="home button" />
-      <img src={CHATBOX} alt="chatbox button" />
+        <Link to={"/home"}>
+          <img src={HOME} alt="home button" />
+        </Link>
+        <Link to={"/createComment"}>
+          <img src={CHATBOX} alt="chatbox button" />
+        </Link>
       </Navbar>
     </MainBody>
   );

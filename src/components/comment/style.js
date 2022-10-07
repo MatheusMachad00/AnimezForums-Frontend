@@ -9,6 +9,7 @@ height: auto;
 padding: 7px 7px;
 border-radius: 18px;
 margin-bottom: 10px;
+width: 350px;
 `
 export const Text = styled.div`
 height: auto;
@@ -19,8 +20,9 @@ h1{
 font-style: normal;
 font-weight: 500;
 font-size: 15px;
-
 color: #000000;
+word-wrap: break-word;
+width: 250px;
 }
 `
 
@@ -49,4 +51,3 @@ color: #FFFFFF;
 margin-bottom: 50px;
 }
 ` 
-

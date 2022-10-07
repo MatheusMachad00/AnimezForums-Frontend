@@ -26,6 +26,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+text-align: center;
 
 img{
   width: 50px;
@@ -40,6 +41,9 @@ font-style: normal;
 font-weight: 700;
 font-size: 15px;
 color: #FFFFFF;
+width: 50px;
+height: auto;
+word-wrap: break-word;
 }
 `
 

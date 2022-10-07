@@ -46,12 +46,14 @@ export default function Home(userData) {
       <Posts>
         {!postsData ? <h1>Sem posts no momento</h1> :
           postsData.map(({ title, stars, id, postOwner, postOwnerAvatar }) => (
-            <PostHome
-              id={id}
-              title={title}
-              stars={stars}
-              postOwner={postOwner}
-              postOwnerAvatar={postOwnerAvatar} />
+            <Link to={`/post/${id}`}>
+              <PostHome
+                id={id}
+                title={title}
+                stars={stars}
+                postOwner={postOwner}
+                postOwnerAvatar={postOwnerAvatar} />
+            </Link>
           ))}
       </Posts>
       <Navbar>
