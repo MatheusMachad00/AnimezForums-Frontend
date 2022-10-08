@@ -81,6 +81,11 @@ display: flex;
 justify-content: space-between;
 padding: 20px 25px;
 
+img{
+  height: 35px;
+  width: 35px;
+}
+
 `
 export const MainBody = styled.div`
 position: relative;

@@ -66,6 +66,10 @@ justify-content: center;
 width: auto;
 margin-top: -75px;
 padding: 25px 15px 90px 15px;
+
+.hidden{
+  display: none;
+}
 `
 
 export const MainBody = styled.div`

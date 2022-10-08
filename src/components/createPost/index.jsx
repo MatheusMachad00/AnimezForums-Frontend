@@ -62,7 +62,7 @@ export default function CreatePost(userData) {
             className="description"
           />
           <Navbar>
-            <Link to={"/signup"}>
+            <Link to={"/home"}>
               <img src={HOME} alt="home button" />
             </Link>
             <button type="submit"><img src={SEND} alt="send button" /> </button>

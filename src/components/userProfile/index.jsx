@@ -7,12 +7,12 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function UserProfile(userData) {
+export default function UserProfile({ userData, setUserDataFromProfile, setCommentOrPost }) {
   const { id } = useParams();
   const [userProfileData, setUserProfileData] = useState("");
 
   useEffect(() => {
-    let TOKEN = userData.userData.token;
+    let TOKEN = userData.token;
 
     const config = {
       headers: {
@@ -25,32 +25,36 @@ export default function UserProfile(userData) {
     request.then(response => {
       const { data } = response;
       setUserProfileData(data);
-      console.log(data);
+      setUserDataFromProfile(data);
     });
     request.catch(err => {
       console.log(err.response)
     });
   }, []);
-console.log(userProfileData)
+
   return (
     <MainBody>
-      <Header headerImg={headerImg} avatar={userData.userData.avatar}/>
+      <Header headerImg={headerImg} avatar={userData.avatar} />
       <UserData>
-        <img src={userProfileData.avatar} alt="user avatar" />
-        <h1>{userProfileData.username}</h1>
+        {!userProfileData ? <></> : <img src={userProfileData.avatar} alt="user avatar" />}
+        {!userProfileData ? <></> : <h1>{userProfileData.username}</h1>}
         <UserStars>
           <img src={STAR_YELLOW} alt="star" />
-          <h2>{userProfileData.totalStars}</h2>
+          {!userProfileData ? <></> : <h2>{userProfileData.totalStars}</h2>}
         </UserStars>
       </UserData>
 
       <Buttons>
-        <button>Posts</button>
-        <button>Comentários</button>
+        <Link to={`/userActivityPost/${id}`}>
+          <button>Posts</button>
+        </Link>
+        <Link to={`/userActivityComment/${id}`}>
+          <button>Comentários</button>
+        </Link>
       </Buttons>
       <Navbar>
         <Link to={"/home"}>
-        <img src={HOME} alt="home button" />
+          <img src={HOME} alt="home button" />
         </Link>
       </Navbar>
 

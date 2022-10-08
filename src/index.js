@@ -9,12 +9,15 @@ import CreatePost from "./components/createPost";
 import CreateComment from "./components/createComment";
 import UserProfile from "./components/userProfile";
 import PostScreen from "./components/postScreen";
-import UserActivity from "./components/userActivity";
+import UserActivityPost from "./components/userActivity-post";
+import UserActivityComment from "./components/userActivity-comment"
 import UserContext from "./context/UserContext";
 
 
 function App() {
   const [userData, setUserData] = useState({});
+  const [userDataFromProfile, setUserDataFromProfile] = useState(false);
+  const [commentOrPost, setCommentOrPost] = useState("");
 
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
@@ -25,9 +28,22 @@ function App() {
           <Route path="/home" element={<Home userData={userData} />} />
           <Route path="/createPost" element={<CreatePost userData={userData} />} />
           <Route path="/createComment/:id" element={<CreateComment userData={userData} />} />
-          <Route path="/UserProfile/:id" element={<UserProfile userData={userData} />} />
+
+          <Route path="/UserProfile/:id" element={<UserProfile
+            userData={userData}
+            setUserDataFromProfile={setUserDataFromProfile}
+            setCommentOrPost={setCommentOrPost} />} />
           <Route path="/post/:id" element={<PostScreen userData={userData} />} />
-          <Route path="/userActivity" element={<UserActivity userData={userData} />} />
+
+          <Route path="/userActivityPost/:id" element={<UserActivityPost
+            userData={userData}
+            userDataFromProfile={userDataFromProfile}
+            commentOrPost={commentOrPost} />} />
+
+          <Route path="/userActivityComment/:id" element={<UserActivityPost
+            userData={userData}
+            userDataFromProfile={userDataFromProfile}
+            commentOrPost={commentOrPost} />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
