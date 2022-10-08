@@ -70,6 +70,8 @@ margin-bottom: 20px;
 export const CommentBody = styled.div`
 width: auto;
 margin: 0 10px;
+/* display: flex;
+flex-direction: column-reverse; */
 `
 
 export const Navbar = styled.div`

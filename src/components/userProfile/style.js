@@ -76,7 +76,7 @@ background-color: black;
 width: 100vw;
 display: flex;
 justify-content: center;
-padding-bottom: 50px;
+padding-bottom: 20px;
 
 
 img{

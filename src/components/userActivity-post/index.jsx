@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import PostHome from "../post";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import BACK from "../../assets/arrow-back-circle.svg"
 
 export default function UserActivityPost({ userData, userDataFromProfile }) {
   const { id } = useParams();
@@ -58,7 +59,12 @@ export default function UserActivityPost({ userData, userDataFromProfile }) {
           ))}
       </ElementsBox>
       <Footer>
-        <img src={HOME} alt="home button" />
+        <Link to={"/home"}>
+          <img src={HOME} alt="home button" />
+        </Link>
+        <Link to={`/UserProfile/${id}`}>
+          <img src={BACK} alt="return button" />
+        </Link>
       </Footer>
     </MainBody>
   );

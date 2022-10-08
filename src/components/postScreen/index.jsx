@@ -29,6 +29,7 @@ export default function PostScreen(userData) {
     request.then(response => {
       const { data } = response;
       setPostsData(data);
+      console.log(data.comments)
     });
     request.catch(err => {
       console.log(err.response)

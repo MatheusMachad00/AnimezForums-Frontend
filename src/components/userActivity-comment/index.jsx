@@ -3,10 +3,11 @@ import headerImg from "../../assets/megumi.png";
 import HOME from "../../assets/home.svg";
 import STAR_YELLOW from "../../assets/star-yellow.svg";
 import { UserData, UserStars, MainBody, Footer, ElementsBox } from "./style";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Comment from "../comment";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import BACK from "../../assets/arrow-back-circle.svg"
 
 export default function UserActivityComment({ userData, userDataFromProfile }) {
   const { id } = useParams();
@@ -45,10 +46,25 @@ export default function UserActivityComment({ userData, userDataFromProfile }) {
         </UserStars>
       </UserData>
       <ElementsBox>
-        {/* comment */}
+        {!pageData ? <></> :
+          pageData.map(({ id, comment, userId }) => (
+            <Comment
+              id={id}
+              comment={comment}
+              userId={userId}
+              userLoggedId={userData.id}
+              commentOwner={userDataFromProfile.username}
+              commentOwnerAvatar={userDataFromProfile.avatar}
+            />
+          ))}
       </ElementsBox>
       <Footer>
-        <img src={HOME} alt="home button" />
+        <Link to={"/home"}>
+          <img src={HOME} alt="home button" />
+        </Link>
+        <Link to={`/UserProfile/${id}`}>
+          <img src={BACK} alt="return button" />
+        </Link>
       </Footer>
     </MainBody>
   );

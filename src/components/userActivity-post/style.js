@@ -49,8 +49,9 @@ bottom: 0;
 width: 100vw;
 background-color: black;
 display: flex;
-justify-content: center;
-padding: 20px 0;
+justify-content: space-between;
+padding: 20px 20px;
+
 
 img{
   height: 45px;

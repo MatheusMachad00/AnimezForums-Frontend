@@ -40,7 +40,7 @@ function App() {
             userDataFromProfile={userDataFromProfile}
             commentOrPost={commentOrPost} />} />
 
-          <Route path="/userActivityComment/:id" element={<UserActivityPost
+          <Route path="/userActivityComment/:id" element={<UserActivityComment
             userData={userData}
             userDataFromProfile={userDataFromProfile}
             commentOrPost={commentOrPost} />} />
