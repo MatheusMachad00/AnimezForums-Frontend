@@ -40,6 +40,7 @@ export default function Signup() {
       <form onSubmit={submitData}>
         <input
           type="text"
+          id="username"
           disabled={loading ? true : false}
           placeholder="Username"
           value={username}
@@ -47,6 +48,7 @@ export default function Signup() {
 
         <input
           type="email"
+          id="email"
           disabled={loading ? true : false}
           placeholder="E-mail"
           value={email}
@@ -54,6 +56,7 @@ export default function Signup() {
 
         <input
           type="password"
+          id="password"
           disabled={loading ? true : false}
           placeholder="Senha"
           value={password}
@@ -61,13 +64,14 @@ export default function Signup() {
 
         <input
           type="url"
+          id="avatarURL"
           disabled={loading ? true : false}
           placeholder="Avatar URL"
           value={avatar}
           onChange={(e) => setAvatar(e.target.value)} />
 
 
-        <button type="submit">
+        <button type="submit" id="send-button">
           {loading ? (
             <ThreeDots color="#FFFFFF" height={13} align='center' />
           ) : (
