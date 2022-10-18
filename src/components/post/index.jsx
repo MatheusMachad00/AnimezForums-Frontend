@@ -4,7 +4,8 @@ import STAR_YELLOW from "../../assets/star-yellow.svg";
 import { Post, LeftSide, MiddleElements, RightSide } from "./style"
 import { Link } from "react-router-dom";
 
-export default function PostHome({ title, stars, postOwner, postOwnerAvatar, id }) {
+export default function PostHome({ title, stars, postOwner, postOwnerAvatar, id, likedByUser }) {
+
   return (
     <Link to={`/post/${id}`}>
       <Post>
@@ -19,7 +20,8 @@ export default function PostHome({ title, stars, postOwner, postOwnerAvatar, id 
           <img src={CHATBOX} alt="chatbox" />
         </MiddleElements>
         <RightSide>
-          <img src={STAR_WHITE} alt="star" />
+          {!likedByUser ? <img src={STAR_WHITE} alt="star" /> :
+            <img src={STAR_YELLOW} alt="star" />}
           <h2>{stars}</h2>
         </RightSide>
       </Post>

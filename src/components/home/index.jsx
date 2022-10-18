@@ -11,6 +11,8 @@ import headerImg from "../../assets/shaltear.png"
 export default function Home(userData) {
   const [anime, setAnime] = useState("");
   const [postsData, setPostsData] = useState(false);
+  const [listOfPostsLiked, setListOfPostsLiked] = useState([]);
+  let postsLikedByTheUser = [];
 
   useEffect(() => {
     let TOKEN = userData.userData.token;
@@ -26,11 +28,22 @@ export default function Home(userData) {
     request.then(response => {
       const { data } = response;
       setPostsData(data);
+      setListOfPostsLiked(data.postsLiked)
     });
     request.catch(err => {
       console.log(err.response)
     });
   }, []);
+
+  if (!listOfPostsLiked) {
+    console.log("waiting....");
+  } else {
+    for (let i = 0; i < listOfPostsLiked.length; i++) {
+      if (listOfPostsLiked[i].userId === userData.userData.id) {
+        postsLikedByTheUser.push(listOfPostsLiked[i].postId);
+      }
+    }
+  }
 
 
   return (
@@ -45,13 +58,14 @@ export default function Home(userData) {
       </SearchBar>
       <Posts>
         {!postsData ? <h1>Sem posts no momento</h1> :
-          postsData.map(({ title, stars, id, postOwner, postOwnerAvatar }) => (
-              <PostHome
-                id={id}
-                title={title}
-                stars={stars}
-                postOwner={postOwner}
-                postOwnerAvatar={postOwnerAvatar} />
+          postsData.homeData.map(({ title, stars, id, postOwner, postOwnerAvatar }) => (
+            <PostHome
+              id={id}
+              title={title}
+              stars={stars}
+              postOwner={postOwner}
+              postOwnerAvatar={postOwnerAvatar}
+              likedByUser={postsLikedByTheUser.includes(id)} />
           ))}
       </Posts>
       <Navbar>
