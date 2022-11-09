@@ -8,14 +8,14 @@ import NEWPOST from "../../assets/new.svg";
 import LOGOUT from "../../assets/logout.svg"
 import headerImg from "../../assets/shaltear.png"
 
-export default function Home(userData) {
+export default function Home({ userData, setIsLikedByUser }) {
   const [anime, setAnime] = useState("");
   const [postsData, setPostsData] = useState(false);
   const [listOfPostsLiked, setListOfPostsLiked] = useState([]);
   let postsLikedByTheUser = [];
 
   useEffect(() => {
-    let TOKEN = userData.userData.token;
+    let TOKEN = userData.token;
 
     const config = {
       headers: {
@@ -29,6 +29,7 @@ export default function Home(userData) {
       const { data } = response;
       setPostsData(data);
       setListOfPostsLiked(data.postsLiked)
+      setIsLikedByUser(data.postsLiked)
     });
     request.catch(err => {
       console.log(err.response)
@@ -39,7 +40,7 @@ export default function Home(userData) {
     console.log("waiting....");
   } else {
     for (let i = 0; i < listOfPostsLiked.length; i++) {
-      if (listOfPostsLiked[i].userId === userData.userData.id) {
+      if (listOfPostsLiked[i].userId === userData.id) {
         postsLikedByTheUser.push(listOfPostsLiked[i].postId);
       }
     }
@@ -48,7 +49,7 @@ export default function Home(userData) {
 
   return (
     <MainBody>
-      <Header headerImg={headerImg} avatar={userData.userData.avatar} />
+      <Header headerImg={headerImg} avatar={userData.avatar} />
       <SearchBar>
         <input
           type="text"

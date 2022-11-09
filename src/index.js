@@ -18,6 +18,7 @@ function App() {
   const [userData, setUserData] = useState({});
   const [userDataFromProfile, setUserDataFromProfile] = useState(false);
   const [commentOrPost, setCommentOrPost] = useState("");
+  const [isLikedByUser, setIsLikedByUser] = useState(false);
 
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login setUserData={setUserData} />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/home" element={<Home userData={userData} />} />
+          <Route path="/home" element={<Home userData={userData} setIsLikedByUser={setIsLikedByUser}/>} />
           <Route path="/createPost" element={<CreatePost userData={userData} />} />
           <Route path="/createComment/:id" element={<CreateComment userData={userData} />} />
 
@@ -33,7 +34,7 @@ function App() {
             userData={userData}
             setUserDataFromProfile={setUserDataFromProfile}
             setCommentOrPost={setCommentOrPost} />} />
-          <Route path="/post/:id" element={<PostScreen userData={userData} />} />
+          <Route path="/post/:id" element={<PostScreen userData={userData} isLikedByUser={isLikedByUser}/>} />
 
           <Route path="/userActivityPost/:id" element={<UserActivityPost
             userData={userData}

@@ -5,6 +5,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 20px 15px;
+background-color: blue;
 
 h1{
   font-family: 'Inter';
@@ -19,6 +20,15 @@ img{
   height: 30px;
   width: 30px;
 }
+
+button{
+  background-color: black;
+  border: none;
+}
+`
+
+export const RightSide = styled.div`
+background-color: red;
 `
 
 export const LeftSide = styled.div`
@@ -27,6 +37,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
+background-color: yellow;
 
 img{
   width: 50px;
@@ -80,6 +91,7 @@ bottom: 0;
 background-color: black;
 width: 100vw;
 display: flex;
+/* align-items: center; */
 justify-content: space-between;
 padding: 20px 25px;
 
