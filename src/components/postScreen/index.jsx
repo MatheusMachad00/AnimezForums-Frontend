@@ -36,46 +36,11 @@ export default function PostScreen({ userData, isLikedByUser }) {
     request.then(response => {
       const { data } = response;
       setPostsData(data);
-      /* console.log(data.comments) */
     });
-    request.catch(err => {
-      console.log(err.response)
-    });
-  }, []);
-
-  /* function giveStart(event) {
-    event.preventDefault();
-    const LINK_API = `http://localhost:5000/post/star/${id}`;
-    let TOKEN = userData.token;
-    const config = {
-      headers: {
-        Authorization: `Bearer ${TOKEN}`
-      }
-    };
-    const request = axios.post(LINK_API, {
-      userId: userData.id
-    }, config);
-    request.then(response => {
-      const { data } = response;
-      setIsLiked(true);
-    })
     request.catch(err => {
       console.log(err.response);
     });
-  }; */
-
-  /* if (postsLikedByTheUser === []) {
-    console.log("waiting....");
-  } else {
-    for (let i = 0; i < isLikedByUser.length; i++) {
-      if(isLikedByUser[i].userId === userData.id){
-        postsLikedByTheUser.push(isLikedByUser[i].postId);
-
-      }
-    }
-  } */
-
-
+  }, []);
 
   return (
     <MainBody>
@@ -89,8 +54,10 @@ export default function PostScreen({ userData, isLikedByUser }) {
                 <h2>{postsData.users.username}</h2>
               </Link>
             </LeftSide>
+            <h1>{postsData.title}</h1>
             <RightSide>
-              <h1>{postsData.title}</h1>
+              <img src={STAR_YELLOW} alt="star" />
+              <h1>0</h1>
             </RightSide>
           </PostHeader>
           <TextPost>

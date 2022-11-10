@@ -20,8 +20,9 @@ export default function PostHome({ title, stars, postOwner, postOwnerAvatar, id,
           <img src={CHATBOX} alt="chatbox" />
         </MiddleElements>
         <RightSide>
-          {!likedByUser ? <img src={STAR_WHITE} alt="star" /> :
-            <img src={STAR_YELLOW} alt="star" />}
+          {/* {!likedByUser ? <img src={STAR_WHITE} alt="star" /> :
+            <img src={STAR_YELLOW} alt="star" />} */}
+            <img src={STAR_YELLOW} alt="star" />
           <h2>{stars}</h2>
         </RightSide>
       </Post>

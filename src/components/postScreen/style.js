@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const PostHeader = styled.div`
 display: flex;
-justify-content: space-between;
 align-items: center;
 padding: 20px 15px;
-background-color: blue;
+/* background-color: blue; */
+text-align: center;
+justify-content: space-between;
+
 
 h1{
   font-family: 'Inter';
@@ -14,6 +16,7 @@ font-weight: 700;
 font-size: 20px;
 color: #FFFFFF;
 padding: 0 10px;
+
 }
 
 img{
@@ -28,7 +31,13 @@ button{
 `
 
 export const RightSide = styled.div`
-background-color: red;
+h1{
+  font-family: 'Inter';
+  font-size: 15px;
+  font-weight: 700;
+  color: yellow;
+  margin-top: 5px;
+}
 `
 
 export const LeftSide = styled.div`
@@ -37,7 +46,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-background-color: yellow;
+/* position: absolute;
+top: 25px; */
 
 img{
   width: 50px;
